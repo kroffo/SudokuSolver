@@ -1,0 +1,41 @@
+<html>
+
+  <head>
+    <title>Sudoku Solver</title>
+    
+    <style>
+
+      .blockTable {
+          border: 2px solid black;
+      }
+
+      .slot {
+          border: 1px solid black;
+      }
+      
+    </style>
+    
+  </head>
+  
+  <body>
+    <table id="sudokuTable"></table>
+    <script src=Square.js></script>
+    <script src=index.js></script>
+    <button id="solveButton" onclick=solveSudoku()>Solve it!</button>
+    <p id="status">
+
+      <script>
+	document.getElementById("solveButton").width = document.getElementById("sudokuTable").width;
+	
+	function solveSudoku() {
+            var statusField = document.getElementById("status");
+	    if(solve())
+	        statusField.innerHTML = "Solved!";
+	    else
+	        statusField.innerHTML = "This sudoku is not solvable without guessing or using clever tricks.";
+	}
+      </script>
+      
+  </body>
+  
+</html>
